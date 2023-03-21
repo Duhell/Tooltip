@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#app{
+    position: relative;
+    padding: 2em;
+    background-color: cadetblue;
+    
+}
+#app::before{
+    position:absolute;
+    content: attr(data-tooltip);
+    top: -.25rem;
+    left: 50%;
+    padding: .5rem 1rem;
+    color: white;
+    transform: translateX(-50%) translateY(-100%);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 300ms ease-out;
+    background-color: rgb(26, 24, 24);
+}
+#app:hover::before{
+    opacity: 1;
+}
